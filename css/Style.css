@@ -1,0 +1,199 @@
+/* ==========================
+   CSS OTIMIZADO + COMENTÁRIOS - ADRITON GYM
+   ========================== */
+
+@charset "utf-8"; /* Define o conjunto de caracteres para evitar erros com acentuação */
+
+/* ==========================
+   RESET BÁSICO
+   Remove espaçamentos padrão e garante controle total do layout
+   ========================== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Faz com que padding e borda contem dentro do tamanho total */
+}
+
+/* ==========================
+   CONFIGURAÇÕES GERAIS DO BODY
+   ========================== */
+body{
+    font-family: Arial, sans-serif; /* Fonte padrão do site */
+    background-color: #3e3e42; /* Cor de fundo escura */
+    line-height: 1.5; /* Melhora a leitura do texto */
+}
+
+/* ==========================
+   CABEÇALHO FIXO NO TOPO
+   Contém logo + menu
+   ========================== */
+#cabecalho{
+  background-color: #000; /* Fundo preto */
+  width: 100%; /* Ocupa toda a largura */
+  height: 75px; /* Altura fixa */
+  padding: 0 15px;
+  display: flex; /* Layout flexível */
+  justify-content: space-between; /* Distribui elementos nos cantos */
+  align-items: center; /* Alinha verticalmente */
+  position: fixed; /* Fixa no topo durante scroll */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Mantém acima de tudo */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.6); /* Sombra para destaque */
+}
+
+/* Estilo do título no cabeçalho */
+#cabecalho h1 {
+    color: #fff;
+    text-shadow: 2px 2px 2px #ff0000; /* Sombra vermelha estilosa */
+    font-size: 4vh;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Lista do menu */
+#cabecalho ul{
+    list-style: none; /* Remove bolinhas */
+    display: flex; /* Itens lado a lado */
+    gap: 12px; /* Espaçamento entre itens */
+}
+
+#cabecalho li{
+    font-size: 2.3vh;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Links do menu */
+#cabecalho a{
+    text-decoration: none; /* Remove sublinhado */
+    color: #fff;
+}
+
+/* Botões do menu */
+#cabecalho button{
+    background-color: #ff0000; /* Vermelho principal */
+    border: 2px solid #606060;
+    padding: 6px 12px;
+    font-size: 2.3vh;
+    cursor: pointer; /* Mãozinha ao passar o mouse */
+    border-radius: 6px; /* Bordas arredondadas */
+    transition: 0.3s; /* Animação suave */
+}
+
+/* Efeito hover dos botões */
+#cabecalho button:hover{
+    background-color: #b30000; /* Vermelho mais escuro */
+    transform: scale(1.05); /* Leve zoom ao passar o mouse */
+}
+
+/* ==========================
+   IMAGEM PRINCIPAL DO ARTIGO
+   ========================== */
+article img{
+/* Ajuste da largura e centralização da imagem */
+width: 100%; /* Reduz o tamanho da imagem */
+height: 70vh; /* Mantém proporção */
+margin-top: 9vh; /* Centraliza e afasta do menu */
+border-radius: 10px; /* Suaviza as bordas */
+}
+/* ==========================
+   ÁREA PRINCIPAL (MAIN)
+   ========================== */
+main{
+    background-color: rgba(229, 11, 11, 0.737); /* Fundo vermelho */
+    margin: auto; /* Centraliza */
+    padding: 20px;
+    max-width: 1200px;/* Limita largura */
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================
+   TÍTULOS E TEXTOS DO ARTIGO
+   ========================== */
+article h2,
+article h3{
+    color: #0d0d0d;
+    text-shadow: 2px 2px 2px #0f3d84; /* Sombra azul leve */
+    font-size: 4vh;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    margin: 12px 0;
+}
+
+/* Parágrafos do artigo */
+article p{
+    color: #0d0d0d;
+    font-size: 2.4vh;
+    margin-bottom: 16px;
+    text-align: center;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* ==========================
+   LISTAS DO ARTIGO
+   ========================== */
+article ul{
+    list-style: none; /* Remove marcadores */
+    margin: 20px auto;
+    text-align: center;
+}
+
+article li{
+    color: #0d0d0d;
+    text-shadow: 3px 3px 3px #ededed; /* Sombra suave */
+    font-style: oblique;
+    font-size: 2.4vh;
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+/* ==========================
+   RODAPÉ DO SITE
+   ========================== */
+#rodape{
+    background-color: #000; /* Fundo preto */
+    color: #fff; /* Texto branco */
+    text-align: center;
+    padding: 12px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+#rodape h3,
+#rodape p{
+    text-shadow: 2px 2px 2px #ff0000;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5vh;
+}
+
+/* ==========================
+   RESPONSIVIDADE - TABLETS E CELULARES
+   ========================== */
+@media (max-width: 768px){
+
+    /* Menu reorganiza para caber na tela */
+    #cabecalho{
+        flex-direction: column; /* Itens um abaixo do outro */
+        height: auto;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    #cabecalho ul{
+        flex-wrap: wrap; /* Permite quebrar linha */
+        justify-content: center;
+    }
+
+    /* Main mais estreito no mobile */
+    main{
+        max-width: 95%;
+    }
+
+    /* Ajusta espaçamento da imagem com o cabeçalho maior */
+    article img{
+        margin-top: 140px;
+    }
+}
